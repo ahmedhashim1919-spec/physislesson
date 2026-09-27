@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قانون نيوتن للجذب العام – أكاديمية النور للتعلم عن بعد</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#0a1631;--bg2:#1c2f58;--pn:#132445;--pn2:#1c2c52;--gold:#d9b25a;--tx:#f2eee3;--mu:#a7b2c7;--ok:#5cc48a;--bad:#e0625f;--bl:#6fa8dc;--ln:#2f4066;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));color-scheme:dark}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:linear-gradient(150deg,var(--bg1),var(--bg2)) fixed;color:var(--tx);font:16px/1.85 Cairo,Tahoma,sans-serif;min-height:100vh}
+body:after{content:"Ahmed Hashem";position:fixed;inset:0;display:grid;place-items:center;font:800 min(16vw,150px)/1 Cairo,sans-serif;color:#fff;opacity:.035;transform:rotate(-24deg);pointer-events:none;z-index:50;direction:ltr}
+h1,h2,h3{color:var(--gold);line-height:1.5;margin:.2em 0 .5em}
+h2{font-size:1.5rem}h3{font-size:1.15rem}
+.en{display:block;color:var(--mu);font-size:.85rem;font-weight:400;direction:ltr;text-align:right}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:#0a1330;border-bottom:1px solid var(--ln);display:flex;gap:10px;align-items:center;padding:8px 14px;flex-wrap:wrap}
+header b{color:var(--gold);font-size:.95rem}header small{color:var(--mu)}
+#menu{display:none}
+#tm{margin-inline-start:auto;background:#3a1d1d;color:#ffb4b0;border:1px solid var(--bad);padding:2px 14px;border-radius:8px;font:800 1.3rem Cairo,monospace;direction:ltr}
+#tm.ok{background:#12291f;color:var(--ok);border-color:var(--ok)}
+.prog{flex:1;min-width:120px;max-width:260px}.prog div{height:6px;background:var(--ln);border-radius:9px;overflow:hidden}.prog i{display:block;height:100%;background:var(--gold);width:0}
+.app{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:calc(100vh - 60px)}
+nav{background:var(--pn);border-inline-end:1px solid var(--ln);padding:12px;position:sticky;top:60px;align-self:start;max-height:calc(100vh - 60px);overflow:auto}
+nav button{display:block;width:100%;text-align:start;background:none;border:0;color:var(--tx);font:inherit;font-size:.92rem;padding:7px 10px;border-radius:8px;cursor:pointer}
+nav button:hover{background:var(--pn2)}nav button.on{background:var(--pn2);color:var(--gold);font-weight:600}nav button.v:before{content:"✓ ";color:var(--ok)}
+main{padding:22px clamp(14px,4vw,44px) 40px;max-width:980px;width:100%}
+footer{border-top:1px solid var(--ln);padding:14px;text-align:center;color:var(--mu);font-size:.85rem}
+.card{background:var(--pn);border:1px solid var(--ln);border-radius:12px;padding:16px 18px;margin:14px 0}
+.card.g{border-color:var(--gold)}
+.big{font-size:clamp(1.3rem,5vw,2.3rem);text-align:center;padding:18px 8px;color:#fff;overflow-x:auto}
+.m{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 4px}.fr i{font-style:normal;padding:0 6px}.fr i:first-child{border-bottom:1.5px solid currentColor}
+.btn{background:var(--pn2);color:var(--tx);border:1px solid var(--ln);padding:7px 16px;border-radius:9px;font:inherit;font-size:.92rem;cursor:pointer}
+.btn:hover{border-color:var(--gold)}.btn.gold{background:var(--gold);color:#1a1405;border-color:var(--gold);font-weight:800}.btn:disabled{opacity:.4;cursor:default}.btn.sm{padding:3px 12px;font-size:.85rem}
+.btn:focus-visible,.opt:focus-visible,nav button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;align-items:center}
+.q{border-bottom:1px solid var(--ln);padding:10px 0}.q:last-child{border:0}
+.a{background:#12291f;border-inline-start:3px solid var(--ok);padding:8px 12px;margin-top:8px;border-radius:6px}
+.st{background:var(--pn2);padding:8px 12px;margin-top:8px;border-radius:6px}
+.mu{color:var(--mu)}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--ln);padding:6px 10px;text-align:start;font-size:.9rem}th{background:var(--pn2);color:var(--gold)}
+.tw{overflow-x:auto}
+.opt{display:block;width:100%;text-align:start;background:var(--pn2);border:1px solid var(--ln);color:var(--tx);font:inherit;padding:10px 14px;border-radius:9px;margin:7px 0;cursor:pointer}
+.opt.sel{border-color:var(--gold);background:#2a2a1c}.opt.ok{border-color:var(--ok);background:#12291f}.opt.no{border-color:var(--bad);background:#33191a}
+.dots{display:flex;flex-wrap:wrap;gap:6px}.dot{width:34px;height:34px;border-radius:8px;border:1px solid var(--ln);background:var(--pn2);color:var(--tx);cursor:pointer;font:inherit}.dot.d{background:#2a2a1c;border-color:var(--gold)}.dot.c{outline:2px solid var(--gold)}
+input,select{background:var(--pn2);color:var(--tx);border:1px solid var(--ln);padding:8px 12px;border-radius:9px;font:inherit;width:100%}
+label{display:block;margin:10px 0 2px;color:var(--mu);font-size:.9rem}
+.err{color:var(--bad)}.okc{color:var(--ok)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.stats div{background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:10px;text-align:center}.stats b{display:block;color:var(--gold);font-size:1.5rem}
+.hero{text-align:center;padding:36px 8px 20px}.hero h1{font-size:clamp(1.8rem,7vw,3.2rem);margin:.3em 0}
+svg{max-width:100%;height:auto;display:block;margin:auto}
+input[type=range]{padding:0}
+.sr{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin:6px 0}
+.modal{position:fixed;inset:0;background:#000b;z-index:60;overflow:auto;padding:14px}.modal>div{background:var(--bg1);border:1px solid var(--gold);border-radius:12px;max-width:820px;margin:20px auto;padding:16px}
+@media(max-width:820px){.app{grid-template-columns:1fr}#menu{display:inline-block}nav{position:fixed;top:0;bottom:0;inset-inline-start:0;width:260px;z-index:55;max-height:none;padding-top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(110%);transition:transform .2s}nav.open{transform:none}}
+@media(prefers-reduced-motion:reduce){nav{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<button class="btn sm" id="menu" aria-label="القائمة">☰ القائمة</button>
+<div><b>أكاديمية النور للتعلم عن بعد</b> <small dir="ltr">Al Noor Online Academy</small></div>
+<div class="prog" title="تقدمك في الدرس"><small id="pt">تقدمك في الدرس: 0%</small><div><i id="pb"></i></div></div>
+<div id="tm" hidden>60:00</div>
+</header>
+<div class="app"><nav id="nav" aria-label="أقسام الدرس"></nav><main id="main"></main></div>
+<footer>أكاديمية النور للتعلم عن بعد · Al Noor Online Academy · Mr. Ahmed Hashem – Physics Teacher · رقم التواصل: <span dir="ltr">002-0114-5450-751</span></footer>
+<div id="modal" class="modal" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* ============ CONTENT DATA (كل المحتوى العلمي من ملف الدرس) ============ */
+const G=6.67e-11;
+const fr=(n,d)=>`<span class="fr"><i>${n}</i><i>${d}</i></span>`;
+const L=s=>`<bdi dir="ltr" class="m">${s}</bdi>`;
+const LAW=`<span class="m">F = G × ${fr('m₁ × m₂','r²')}</span>`;
+const TOPICS={c:'مفهوم الجذب العام',law:'نص القانون ورموزه',G:'ثابت الجذب العام G ووحدته',calc:'الحسابات المباشرة',ratio:'النسب والتناسب',third:'قانون نيوتن الثالث',res:'القوة المحصلة'};
+const QA={
+concept:[['ما المقصود بقوة الجذب العام؟','هي قوة التجاذب المتبادلة بين أي جسمين لهما كتلة.'],['على ماذا تعتمد قوة الجذب العام بين جسمين؟','تعتمد على كتلتي الجسمين والمسافة بين مركزيهما.'],['ماذا يحدث لقوة الجذب إذا زادت كتلة أحد الجسمين؟','تزداد قوة الجذب.'],['ماذا يحدث لقوة الجذب إذا زادت المسافة بين الجسمين؟','تقل قوة الجذب.'],['هل قوة الجذب العام قوة تجاذب أم تنافر؟','قوة تجاذب.']],
+law:[['اكتب نص قانون نيوتن للجذب العام.','تتجاذب كل كتلتين في الكون بقوة تتناسب طرديًا مع حاصل ضرب كتلتيهما، وعكسيًا مع مربع المسافة بين مركزيهما.'],['اكتب العلاقة الرياضية لقانون الجذب العام.',L('F = G × (m₁ × m₂) / r²')],['ماذا تمثل F؟','قوة الجذب المتبادلة بين الجسمين، وتقاس بالنيوتن.'],['ماذا تمثل r؟','المسافة بين مركزي الجسمين.'],['لماذا توجد r² في المقام؟','لأن قوة الجذب تتناسب عكسيًا مع مربع المسافة.']],
+g:[['ما قيمة ثابت الجذب العام G؟',L('6.67 × 10⁻¹¹ N·m²/kg²')],['هل تتغير قيمة G من مسألة إلى أخرى؟','لا، قيمة G ثابتة.'],['ما وحدة قياس G؟',L('N·m²/kg²')],['ماذا يعني أن قيمة G صغيرة جدًا؟','يعني أن قوة الجذب العام تكون ضعيفة نسبيًا بين الأجسام ذات الكتل العادية.']],
+res:[['قوتا جذب مقدارهما 15 N و10 N وفي نفس الاتجاه. احسب المحصلة.','25 N في اتجاه القوتين.'],['قوتا جذب 25 N إلى اليمين و15 N إلى اليسار. احسب المحصلة.','10 N إلى اليمين.'],['قوتان متساويتان ومتضادتان، كل منهما 20 N. ما المحصلة؟','صفر نيوتن.'],['قوى مقدارها 30 N يمينًا، و10 N يسارًا، و5 N يسارًا. ما المحصلة؟','30 − (10 + 5) = 15 N إلى اليمين.']],
+third:[['هل قوة الأرض المؤثرة في جسم تساوي قوة الجسم المؤثرة في الأرض؟','نعم، القوتان متساويتان في المقدار ومتضادتان في الاتجاه.'],['لماذا لا تلغي القوتان بعضهما؟','لأن كل قوة تؤثر في جسم مختلف.'],['الأرض تجذب جسمًا بقوة 100 N. ما مقدار قوة جذب الجسم للأرض؟','100 N في الاتجاه المعاكس.'],['ما القانون الذي يفسر تساوي قوتي التجاذب؟','قانون نيوتن الثالث للحركة.'],['هل اختلاف كتلتي الأرض والجسم يجعل قوتي التجاذب مختلفتين؟','لا؛ القوتان متساويتان في المقدار. الاختلاف يظهر في العجلة لأن الكتلتين مختلفتان.']]
+};
+const CALC=[['كتلتان 5 kg و10 kg، والمسافة بين مركزيهما 2 m. احسب قوة الجذب.','F = 6.67×10⁻¹¹ × (5×10) / 4','8.3375×10⁻¹⁰ N'],['كتلة جسم 10 kg وكتلة جسم آخر 30 kg، والمسافة بين مركزيهما 3 m. احسب قوة الجذب.','F = 6.67×10⁻¹¹ × (10×30) / 9','2.223×10⁻⁹ N'],['كتلتان 4 kg و6 kg والمسافة بين مركزيهما 2 m. احسب قوة الجذب.','F = 6.67×10⁻¹¹ × (4×6) / 4','4.002×10⁻¹⁰ N'],['كتلتان 20 kg و30 kg والمسافة بين مركزيهما 5 m. احسب قوة الجذب.','F = 6.67×10⁻¹¹ × (20×30) / 25','1.6008×10⁻⁹ N'],['إذا كانت قوة الجذب بين جسمين 8×10⁻⁹ N، ثم زادت المسافة إلى الضعف، فما القوة الجديدة؟','القوة الجديدة = 8×10⁻⁹ / 4','2×10⁻⁹ N']];
+const RATIO=[
+{h:'أولًا: تغير كتلة واحدة',p:'إذا تضاعفت كتلة أحد الجسمين مع ثبات باقي العوامل، تتضاعف القوة.',qa:[['إذا تضاعفت كتلة أحد الجسمين، ماذا يحدث لقوة الجذب؟','تتضاعف قوة الجذب.'],['إذا أصبحت كتلة أحد الجسمين ثلاثة أمثالها، ماذا يحدث للقوة؟','تصبح القوة ثلاثة أمثالها.']]},
+{h:'ثانيًا: تغير الكتلتين',p:'إذا تضاعفت كتلة كل من الجسمين: '+L("F′ = 2 × 2 F = 4F"),qa:[['إذا تضاعفت كتلة كل من الجسمين، فماذا يحدث للقوة؟','تصبح أربعة أمثالها: '+L('F′ = 2×2F = 4F')],['إذا أصبحت كتلة الجسم الأول 3 أمثالها والثاني ضعفيه، فما نسبة القوة الجديدة إلى الأصلية؟',L('F′/F = 3×2 = 6')+' ؛ أي تصبح القوة ستة أمثالها.']]},
+{h:'ثالثًا: تغير المسافة',p:'إذا تضاعفت المسافة: '+L('F′ = F / 4')+' — إذا أصبحت المسافة نصف قيمتها: '+L('F′ = 4F')+' — إذا أصبحت ثلاثة أمثالها: '+L('F′ = F / 9'),qa:[['إذا تضاعفت المسافة بين الجسمين، فماذا يحدث للقوة؟','تصبح ربع قيمتها.'],['إذا أصبحت المسافة نصف قيمتها، فماذا يحدث للقوة؟','تصبح أربعة أمثال قيمتها.'],['إذا أصبحت المسافة ثلاثة أمثالها، فما القوة الجديدة بالنسبة للأصلية؟','تصبح 1/9 من القيمة الأصلية.']]},
+{h:'رابعًا: مسائل نسب مركبة',p:'الخطوات: المعطيات ← العلاقة ← التعويض النسبي ← النتيجة.',qa:[['زادت كتلة الجسم الأول إلى ثلاثة أمثالها، والثاني إلى ضعفيها، وأصبحت المسافة ضعف قيمتها. كم تصبح القوة؟',L('F′/F = (3×2)/(2²) = 6/4 = 3/2')+' ؛ أي تصبح 1.5 مرة من قيمتها الأصلية.'],['تضاعفت كتلة الجسم الأول، وثبتت كتلة الجسم الثاني، وأصبحت المسافة نصف قيمتها. كم تصبح القوة؟',L('F′/F = 2/(1/2)² = 2/(1/4) = 8')+' ؛ أي تصبح ثمانية أمثالها.'],['قلت كتلة أحد الجسمين إلى النصف، وتضاعفت المسافة. كم تصبح القوة؟',L('F′/F = (1/2)/4 = 1/8')+' ؛ أي تصبح ثُمن قيمتها الأصلية.']]}];
+const APPLY=[['اكتب القانون.',L('F = G(m₁m₂)/r²')],['احسب قوة الجذب.',L('F = 3.335×10⁻⁹ N')],['إذا تضاعفت المسافة فما القوة؟','عند مضاعفة المسافة تصبح القوة ربع القيمة = '+L('8.3375×10⁻¹⁰ N')],['إذا تضاعفت كتلة الجسم الأول فما القوة؟','تصبح القوة ضعف القيمة = '+L('6.67×10⁻⁹ N')],['هل القوتان المتبادلتان متساويتان؟','نعم، القوتان متساويتان في المقدار ومتضادتان في الاتجاه، وفقًا لقانون نيوتن الثالث.']];
+/* بنك الأسئلة: a = رقم الإجابة الصحيحة. مصدره القسم التاسع والأقسام السابقة من الملف */
+const BANK=[
+{t:'c',q:'قوة الجذب العام تعتمد على:',o:['الكتلتين فقط','المسافة فقط','الكتلتين والمسافة','حجم الجسمين فقط'],a:2,e:'تعتمد على كتلتي الجسمين والمسافة بين مركزيهما.'},
+{t:'law',q:'العلاقة الصحيحة لقوة الجذب العام هي:',o:['F=Gm₁m₂r²','F=Gm₁m₂/r²','F=Gr²/m₁m₂','F=Gr/m₁m₂'],a:1,e:'F = G(m₁m₂)/r²'},
+{t:'ratio',q:'إذا تضاعفت المسافة بين جسمين، فإن قوة الجذب:',o:['تتضاعف','تصبح نصفًا','تصبح ربعًا','تصبح أربعة أمثال'],a:2,e:'F ∝ 1/r²، فعند مضاعفة المسافة تصبح القوة ربع قيمتها.'},
+{t:'ratio',q:'إذا تضاعفت كتلة أحد الجسمين، فإن قوة الجذب:',o:['تقل للنصف','تتضاعف','تصبح أربعة أمثال','لا تتغير'],a:1,e:'F ∝ m₁ (أو m₂)، فتتضاعف القوة.'},
+{t:'G',q:'قيمة G تقريبًا:',o:['9.8','3×10⁸','6.67×10⁻¹¹','1.6×10⁻¹⁹'],a:2,e:'G = 6.67×10⁻¹¹ N·m²/kg².'},
+{t:'third',q:'إذا جذبت الأرض جسمًا بقوة 50 N، فإن الجسم يجذب الأرض:',o:['25 N','صفر','أكثر من 50 N','50 N في الاتجاه المعاكس'],a:3,e:'القوتان متساويتان في المقدار ومتضادتان في الاتجاه (قانون نيوتن الثالث).'},
+{t:'res',q:'قوتان متساويتان ومتضادتان تؤثران في جسم، محصلتهما:',o:['مجموعهما','ضعف إحداهما','القوة الأكبر','صفر'],a:3,e:'مقدار المحصلة = القوة الأكبر − القوة الأصغر = صفر.'},
+{t:'third',q:'لماذا لا تلغي القوتان المتبادلتان بعضهما؟',o:['لأن إحداهما أكبر من الأخرى','لأن كل قوة تؤثر في جسم مختلف','لأن القوتين في الاتجاه نفسه','لأن كتلتي الجسمين متساويتان'],a:1,e:'كل قوة تؤثر في جسم مختلف.'},
+{t:'law',q:'ماذا تمثل r في القانون؟',o:['كتلة الجسم الأول','ثابت الجذب العام','المسافة بين مركزي الجسمين','قوة الجذب'],a:2,e:'r هي المسافة بين مركزي الجسمين.'},
+{t:'G',q:'ما وحدة قياس الثابت G؟',o:['N·m²/kg²','N/kg','kg·m/s²','N·m/kg'],a:0,e:'وحدة G هي N·m²/kg².'},
+{t:'calc',q:'كتلتان 5 kg و10 kg والمسافة بين مركزيهما 2 m. قوة الجذب بينهما:',o:['3.335×10⁻⁹ N','8.3375×10⁻¹⁰ N','1.6675×10⁻⁹ N','2.223×10⁻⁹ N'],a:1,e:'F = 6.67×10⁻¹¹ × (5×10)/4 = 8.3375×10⁻¹⁰ N.'},
+{t:'calc',q:'كتلتان 4 kg و6 kg والمسافة بين مركزيهما 2 m. قوة الجذب بينهما:',o:['8.004×10⁻¹⁰ N','1.6008×10⁻⁹ N','2.223×10⁻⁹ N','4.002×10⁻¹⁰ N'],a:3,e:'F = 6.67×10⁻¹¹ × (4×6)/4 = 4.002×10⁻¹⁰ N.'},
+{t:'ratio',q:'أصبحت كتلة الجسم الأول 3 أمثالها والثاني ضعفيها والمسافة ضعف قيمتها. تصبح القوة:',o:['ستة أمثالها','1.5 مرة من قيمتها الأصلية','ثلاثة أمثالها','ربع قيمتها'],a:1,e:'F′/F = (3×2)/2² = 6/4 = 3/2 = 1.5.'},
+{t:'ratio',q:'قلت كتلة أحد الجسمين إلى النصف وتضاعفت المسافة. تصبح القوة:',o:['نصف قيمتها','ربع قيمتها','ثُمن قيمتها الأصلية','ثمانية أمثالها'],a:2,e:'F′/F = (1/2)/4 = 1/8.'},
+{t:'res',q:'قوى مقدارها 30 N يمينًا، و10 N يسارًا، و5 N يسارًا. المحصلة:',o:['45 N يمينًا','15 N إلى اليسار','25 N يمينًا','15 N إلى اليمين'],a:3,e:'30 − (10 + 5) = 15 N إلى اليمين.'}];
+
+/* ============ DATA SERVICE (استبدل هذه الطبقة بـ API/قاعدة بيانات عند الربط بخادم) ============ */
+const DS={
+ k:'gr_results',
+ all(){try{return JSON.parse(localStorage.getItem(this.k)||'[]')}catch(e){return[]}},
+ has(email){return this.all().some(r=>r.email===email)},
+ save(r){try{const a=this.all();a.push(r);localStorage.setItem(this.k,JSON.stringify(a))}catch(e){}}
+};
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+
+/* ============ HELPERS ============ */
+const $=(s,r=document)=>r.querySelector(s);
+const sup={'-':'⁻',0:'⁰',1:'¹',2:'²',3:'³',4:'⁴',5:'⁵',6:'⁶',7:'⁷',8:'⁸',9:'⁹'};
+const sci=x=>{if(!x)return'0';let e=Math.floor(Math.log10(x)),m=+(x/10**e).toPrecision(4);if(m>=10){m/=10;e++}return m+' × 10'+String(e).split('').map(c=>sup[c]).join('')};
+const fmtD=t=>new Date(t).toLocaleDateString('en-CA'),fmtT=t=>new Date(t).toLocaleTimeString('en-GB');
+const qa=l=>l.map(([q,a],i)=>`<div class="q"><p><b>السؤال ${i+1}:</b> ${q}</p><button class="btn sm rv">إظهار الإجابة</button><div class="a" hidden><b>الإجابة:</b> ${a}</div></div>`).join('');
+const svgGrav=(m1,m2,r)=>{const x1=70,x2=70+r*46,r1=9+Math.sqrt(m1)*2.4,r2=9+Math.sqrt(m2)*2.4;return`<svg viewBox="0 0 600 170" role="img" aria-label="جسمان والمسافة بين مركزيهما"><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="#d4a94a"/></marker></defs>
+<circle cx="${x1}" cy="70" r="${r1}" fill="#3b6ea5"/><circle cx="${x2}" cy="70" r="${r2}" fill="#7a4fa3"/>
+<text x="${x1}" y="${70+r1+18}" fill="#eef0f4" font-size="14" text-anchor="middle">m₁ = ${m1} kg</text><text x="${x2}" y="${70+r2+18}" fill="#eef0f4" font-size="14" text-anchor="middle">m₂ = ${m2} kg</text>
+<line x1="${x1+r1+4}" y1="70" x2="${x1+r1+44}" y2="70" stroke="#d4a94a" stroke-width="3" marker-end="url(#ar)"/><line x1="${x2-r2-4}" y1="70" x2="${x2-r2-44}" y2="70" stroke="#d4a94a" stroke-width="3" marker-end="url(#ar)"/>
+<text x="${(x1+x2)/2}" y="55" fill="#d4a94a" font-size="14" text-anchor="middle">F  ⇄  F</text>
+<line x1="${x1}" y1="140" x2="${x2}" y2="140" stroke="#9aa5b8"/><line x1="${x1}" y1="133" x2="${x1}" y2="147" stroke="#9aa5b8"/><line x1="${x2}" y1="133" x2="${x2}" y2="147" stroke="#9aa5b8"/>
+<text x="${(x1+x2)/2}" y="162" fill="#9aa5b8" font-size="14" text-anchor="middle">r = ${r} m (بين المركزين)</text></svg>`};
+const svgThird=`<svg viewBox="0 0 520 130" role="img" aria-label="قوتان متبادلتان متساويتان ومتضادتان"><defs><marker id="a2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8z" fill="#d4a94a"/></marker></defs><circle cx="90" cy="60" r="30" fill="#3b6ea5"/><circle cx="430" cy="60" r="20" fill="#7a4fa3"/><text x="90" y="112" fill="#eef0f4" font-size="14" text-anchor="middle">الجسم 1</text><text x="430" y="112" fill="#eef0f4" font-size="14" text-anchor="middle">الجسم 2</text>
+<line x1="126" y1="60" x2="230" y2="60" stroke="#d4a94a" stroke-width="3" marker-end="url(#a2)"/><text x="178" y="48" fill="#d4a94a" font-size="14" text-anchor="middle">F₁₂ (على الجسم 2)</text>
+<line x1="394" y1="60" x2="290" y2="60" stroke="#6fd0a0" stroke-width="3" marker-end="url(#a2)"/><text x="342" y="82" fill="#6fd0a0" font-size="14" text-anchor="middle">F₂₁ (على الجسم 1)</text></svg>`;
+const hd=(t,en)=>`<h2>${t}<span class="en">${en}</span></h2>`;
+
+/* ============ VIEWS ============ */
+const ORDER=['home','goals','concept','law','g','calc','ratio','third','res','apply','review','practice','quiz','teacher'];
+const NAMES={home:'الصفحة الرئيسية',goals:'أهداف الدرس',concept:'مفهوم الجذب العام',law:'نص القانون والمحاكاة',g:'ثابت الجذب العام G',calc:'الحسابات المباشرة',ratio:'النسب والتناسب',third:'نيوتن الثالث والجاذبية',res:'القوة المحصلة',apply:'تطبيق شامل',review:'مراجعة الدرس',practice:'تدريبات',quiz:'الاختبار',teacher:'لوحة المعلم (Teacher Dashboard)'};
+const LESSON=ORDER.slice(1,12);
+const V={
+home:()=>`<div class="hero"><div style="color:var(--gold);font-weight:800">أكاديمية النور للتعلم عن بعد</div><div class="mu" dir="ltr">Al Noor Online Academy</div><h1>قانون نيوتن للجذب العام</h1><div class="mu" dir="ltr">Newton's Law of Universal Gravitation</div><p class="mu" dir="ltr">Physics – Interactive Lesson</p><p>Mr. Ahmed Hashem<br><span class="mu">مستر أحمد هاشم – مدرس الفيزياء</span></p>
+<div class="row" style="justify-content:center"><button class="btn gold" data-go="goals" style="font-size:1.15rem;padding:10px 34px">ابدأ الدرس</button></div>
+<div class="row" style="justify-content:center"><button class="btn" data-go="concept">شرح الدرس</button><button class="btn" data-go="review">المراجعة</button><button class="btn" data-go="practice">التدريبات</button><button class="btn" data-go="quiz">الاختبار</button></div></div>
+<div class="card big">${LAW}</div>`,
+goals:()=>`${hd('أهداف الدرس','Lesson Objectives')}<div class="card"><ul>${['شرح مفهوم الجاذبية وقانون نيوتن للجذب العام.','كتابة نص القانون والعلاقة الرياضية بصورة صحيحة.','فهم ثابت الجذب العام G ووحدته وقيمته.','حل مسائل الحسابات المباشرة.','حل مسائل التناسب والنسب عند تغير الكتلة أو المسافة.','الربط بين قانون الجذب العام وقانون نيوتن الثالث.','إيجاد القوة المحصلة في مسائل الجاذبية.'].map(x=>`<li>${x}</li>`).join('')}</ul></div>`,
+concept:()=>`${hd('مفهوم قانون نيوتن للجذب العام',"Newton's Law of Universal Gravitation – Concept")}<div class="card"><p>كل جسمين لهما كتلة في الكون يؤثر كل منهما في الآخر بقوة تجاذب تسمى <b>قوة الجذب العام</b> <small class="mu" dir="ltr">(Gravitational Force)</small>.</p><p>تعتمد قوة الجذب بين جسمين على كتلتي الجسمين وعلى المسافة بين مركزيهما. كلما زادت الكتل زادت قوة الجذب، وكلما زادت المسافة قلت قوة الجذب.</p></div><div class="card g"><b>الخلاصة:</b> قوة الجذب تتناسب طرديًا مع حاصل ضرب الكتلتين، وعكسيًا مع مربع المسافة بين مركزي الجسمين.</div><div class="card">${svgGrav(10,20,3)}</div><div class="card">${qa(QA.concept)}</div>`,
+law:()=>`${hd('نص قانون نيوتن للجذب العام','The Law Statement')}<div class="card g"><p>ينص القانون على: تتجاذب كل كتلتين في الكون بقوة تتناسب طرديًا مع حاصل ضرب كتلتيهما، وعكسيًا مع مربع المسافة بين مركزيهما.</p></div><div class="card big g">${LAW}</div>
+<div class="card tw"><table><tr><th>الرمز</th><th>المعنى</th><th>الوحدة</th></tr><tr><td>F</td><td>قوة الجذب المتبادلة بين الجسمين</td><td>N (نيوتن)</td></tr><tr><td>G</td><td>ثابت الجذب العام</td><td>N·m²/kg²</td></tr><tr><td>m₁ , m₂</td><td>كتلتا الجسمين</td><td>kg</td></tr><tr><td>r</td><td>المسافة بين مركزي الجسمين</td><td>m</td></tr></table></div>
+<div class="card"><h3>محاكاة قانون الجذب</h3><div id="simsvg"></div>
+<div class="sr"><span>m₁</span><input type="range" id="s1" min="1" max="100" value="10" aria-label="الكتلة الأولى"><b id="v1"></b></div><div class="sr"><span>m₂</span><input type="range" id="s2" min="1" max="100" value="20" aria-label="الكتلة الثانية"><b id="v2"></b></div><div class="sr"><span>r</span><input type="range" id="s3" min="1" max="10" step="0.5" value="2" aria-label="المسافة"><b id="v3"></b></div>
+<div class="big" id="simF"></div></div><div class="card">${qa(QA.law)}</div>`,
+g:()=>`${hd('ثابت الجذب العام G','Gravitational Constant')}<div class="card big g"><span class="m">G = 6.67 × 10⁻¹¹ N·m²/kg²</span></div><div class="card"><ul><li><b>الرمز:</b> G — ثابت الجذب العام.</li><li><b>القيمة (تقريبية):</b> ${L('6.67 × 10⁻¹¹')}</li><li><b>الوحدة:</b> ${L('N·m²/kg²')}</li><li><b>ثباته:</b> ثابت كوني، وقيمته واحدة عند استخدام قانون الجذب العام.</li><li><b>دلالة صغره:</b> قوة الجذب بين الأجسام ذات الكتل العادية تكون صغيرة نسبيًا، بينما تصبح واضحة جدًا مع الأجرام ذات الكتل الكبيرة.</li></ul></div><div class="card">${qa(QA.g)}</div>`,
+calc:()=>`${hd('مسائل الحسابات المباشرة','Direct Calculations')}<div class="card"><b>خطوات الحل:</b> 1) اكتب القانون. 2) حدد الكتل والمسافة. 3) تأكد من الوحدات. 4) عوض. 5) اكتب الوحدة النهائية.</div>
+<div class="card g"><h3>مثال محلول</h3><p>جسمان كتلتهما 10 kg و20 kg، والمسافة بين مركزيهما 2 m. احسب قوة الجذب بينهما.</p>
+<div class="stp st" hidden>${LAW}</div><div class="stp st" hidden>${L('F = 6.67×10⁻¹¹ × (10×20) / 2²')}</div><div class="stp st" hidden><b>الإجابة النهائية:</b> ${L('3.335×10⁻⁹ N')}</div><div class="row"><button class="btn gold" id="nx">إظهار خطوات الحل</button></div></div>
+<h3>تدريبات</h3>${CALC.map(([q,s,f],i)=>`<div class="card pr"><p><b>مسألة ${i+1}:</b> ${q}</p><div class="row"><button class="btn sm" data-k="s1">إظهار القانون</button><button class="btn sm" data-k="s2">إظهار التعويض</button><button class="btn sm" data-k="s3">إظهار الحل النهائي</button><button class="btn sm" data-k="h">إخفاء الحل</button></div><div class="st s1" hidden>${i==4?L('F ∝ 1/r²'):LAW}</div><div class="st s2" hidden>${L(s)}</div><div class="a s3" hidden>${L(f)}</div></div>`).join('')}`,
+ratio:()=>`${hd('مسائل النسب والتناسب','Ratio and Proportion')}<div class="card big g"><span class="m">F ∝ m₁ &nbsp; F ∝ m₂ &nbsp; F ∝ 1/r²</span></div>
+<div class="card"><h3>ماذا يحدث للقوة؟</h3>${[['m1','الكتلة الأولى',[['لا تتغير',1],['تتضاعف',2],['تصبح ثلاثة أمثال',3]]],['m2','الكتلة الثانية',[['لا تتغير',1],['تتضاعف',2],['تصبح ثلاثة أمثال',3]]],['r','المسافة',[['لا تتغير',1],['تتضاعف',2],['تصبح نصفًا',.5],['تصبح ثلاثة أمثال',3]]]].map(([id,l,o])=>`<label for="t_${id}">${l}</label><select id="t_${id}">${o.map(([t,v])=>`<option value="${v}">${t}</option>`).join('')}</select>`).join('')}<div class="big" id="tres"></div></div>
+${RATIO.map(g=>`<div class="card"><h3>${g.h}</h3><p>${g.p}</p>${qa(g.qa)}</div>`).join('')}`,
+third:()=>`${hd('العلاقة بين قانون نيوتن الثالث وقانون الجذب العام',"Newton's Third Law & Gravitation")}<div class="card"><p>عندما يجذب جسمٌ جسمًا آخر، فإن الجسم الثاني يجذب الأول بقوة مساوية في المقدار ومضادة في الاتجاه. وهذا تطبيق مباشر لقانون نيوتن الثالث.</p><p>إذا أثّر الجسم الأول في الثاني بقوة F₁₂، فإن الثاني يؤثر في الأول بقوة F₂₁ مساوية لها في المقدار ومضادة لها في الاتجاه.</p><div class="big g">${L('F₁₂ = F₂₁')} <span class="mu" style="font-size:1rem">(في المقدار، والاتجاهان متعاكسان)</span></div>${svgThird}</div>
+<div class="card g"><h3>هل القوتان تلغيان بعضهما؟</h3><p><b>لا.</b> لأن كل قوة تؤثر في جسم مختلف.</p></div><div class="card">${qa(QA.third)}</div>`,
+res:()=>`${hd('القوة المحصلة','Resultant Force')}<div class="card"><p>إذا تعرض جسم لأكثر من قوة، فإن القوة المحصلة تعتمد على اتجاهات القوى.</p></div>
+<div class="card"><h3>الحالة الأولى: القوى في نفس الاتجاه</h3><p class="big">${L('Fᵣ = F₁ + F₂ + ...')}</p><p>مثال: قوة 10 N إلى اليمين وقوة 5 N إلى اليمين ← ${L('Fᵣ = 10 + 5 = 15 N')} إلى اليمين.</p></div>
+<div class="card"><h3>الحالة الثانية: القوى في اتجاهين متعاكسين</h3><p>مقدار المحصلة = القوة الأكبر − القوة الأصغر، واتجاهها اتجاه القوة الأكبر.</p><p>مثال: قوة 20 N إلى اليمين وقوة 8 N إلى اليسار ← ${L('Fᵣ = 20 − 8 = 12 N')} إلى اليمين.</p></div>
+<div class="card"><h3>تدريبات المحصلة</h3><p class="mu">حدد أولًا: هل القوى في نفس الاتجاه أم متعاكسة؟ ثم: هل نجمع أم نطرح؟ ثم احسب.</p>${qa(QA.res)}</div>`,
+apply:()=>`${hd('تطبيق شامل','Comprehensive Application')}<div class="card g">جسمان كتلتهما 10 kg و20 kg، والمسافة بين مركزيهما 2 m.</div>${APPLY.map(([q,a],i)=>`<div class="card"><b>الخطوة ${i+1}: ${['اكتب القانون.','احسب قوة الجذب.','إذا تضاعفت المسافة فما القوة؟','إذا تضاعفت كتلة الجسم الأول فما القوة؟','هل القوتان المتبادلتان متساويتان؟'][i]}</b><br><button class="btn sm rv">إظهار الحل</button><div class="a" hidden>${a}</div></div>`).join('')}`,
+review:()=>`${hd('مراجعة الدرس','Lesson Review')}${[['مفهوم الجذب العام','كل جسمين لهما كتلة يتجاذبان بقوة تسمى قوة الجذب العام.'],['نص القانون','تتجاذب كل كتلتين بقوة تتناسب طرديًا مع حاصل ضرب كتلتيهما وعكسيًا مع مربع المسافة بين مركزيهما.'],['العلاقة الرياضية',LAW],['ثابت الجذب العام',L('G = 6.67×10⁻¹¹ N·m²/kg²')+' — ثابت كوني.'],['العلاقات التناسبية',L('F ∝ m₁ , F ∝ m₂ , F ∝ 1/r²')],['قانون نيوتن الثالث والجاذبية','القوتان المتبادلتان متساويتان في المقدار ومتضادتان في الاتجاه، ولا تلغيان بعضهما لأن كلًا منهما تؤثر في جسم مختلف.'],['القوة المحصلة','نجمع القوى في الاتجاه نفسه، ونطرح القوى المتعاكسة مع تحديد اتجاه القوة الأكبر.']].map(([t,b],i)=>`<div class="card"><h3>${i+1}. ${t}</h3>${b}</div>`).join('')}<div class="card g"><h3>أهم القوانين</h3><p class="big">${L('F = G(m₁m₂)/r²')}<br>${L('F ∝ m₁')} &nbsp; ${L('F ∝ m₂')} &nbsp; ${L('F ∝ 1/r²')}<br>${L('G = 6.67×10⁻¹¹ N·m²/kg²')}</p></div>`,
+practice:()=>`${hd('تدريبات','Exercises')}<p class="mu">اختر الإجابة ثم اضغط «تحقق».</p>${Object.keys(TOPICS).map(t=>`<h3>${TOPICS[t]}</h3>${BANK.map((q,i)=>q.t==t?`<div class="card pq" data-i="${i}"><p><b>${q.q}</b></p>${q.o.map((o,j)=>`<label style="color:var(--tx);margin:4px 0"><input type="radio" name="p${i}" value="${j}" style="width:auto"> <bdi>${o}</bdi></label>`).join('')}<div class="row"><button class="btn sm chk">تحقق</button></div><div class="fb"></div></div>`:'').join('')}`).join('')}`,
+quiz:()=>act?quizQ():quizIntro(),
+teacher:()=>dash()
+};
+
+/* ============ ROUTING / PROGRESS ============ */
+let cur='home',vis=new Set(store.get('gr_prog')||[]);
+function show(id){cur=id;if(LESSON.includes(id)){vis.add(id);store.set('gr_prog',[...vis])}
+ $('#main').innerHTML=V[id]();(H[id]||(()=>{}))();$('#nav').classList.remove('open');scrollTo(0,0);
+ try{history.replaceState(null,'','#'+id)}catch(e){}
+ nav();
+ const p=Math.round(LESSON.filter(x=>vis.has(x)).length/LESSON.length*100);$('#pt').textContent='تقدمك في الدرس: '+p+'%';$('#pb').style.width=p+'%'}
+function nav(){$('#nav').innerHTML=ORDER.map(id=>`<button data-go="${id}" class="${id==cur?'on':''} ${vis.has(id)?'v':''}">${NAMES[id]}</button>`).join('')}
+function pager(){const i=ORDER.indexOf(cur),last=ORDER.indexOf('quiz');return `<div class="row" style="justify-content:space-between;margin-top:26px"><button class="btn" data-go="${ORDER[i-1]}" ${i<1||cur=='teacher'?'hidden':''}>← السابق</button><button class="btn" data-go="home">القائمة الرئيسية</button><button class="btn gold" data-go="${ORDER[i+1]}" ${i>=last||cur=='teacher'?'hidden':''}>التالي →</button></div>`}
+const _show=show;show=function(id){_show(id);if(id!='teacher'&&!(id=='quiz'&&act))$('#main').insertAdjacentHTML('beforeend',pager())};
+
+/* ============ HOOKS (simulations) ============ */
+const H={
+law(){const u=()=>{const a=+$('#s1').value,b=+$('#s2').value,r=+$('#s3').value;$('#v1').textContent=a+' kg';$('#v2').textContent=b+' kg';$('#v3').textContent=r+' m';$('#simsvg').innerHTML=svgGrav(a,b,r);$('#simF').innerHTML=`<span class="m">F = ${sci(G*a*b/(r*r))} N</span>`};['s1','s2','s3'].forEach(i=>$('#'+i).oninput=u);u()},
+ratio(){const u=()=>{const k=['m1','m2','r'].map(i=>+$('#t_'+i).value),f=k[0]*k[1]/(k[2]*k[2]);$('#tres').innerHTML=`<span class="m">F′/F = (${k[0]} × ${k[1]}) / (${k[2]})² = ${+f.toFixed(4)}</span><br><small class="mu">القوة الجديدة = ${+f.toFixed(4)} من القوة الأصلية</small>`};['m1','m2','r'].forEach(i=>$('#t_'+i).onchange=u);u()},
+quiz(){if(act)bindQ()}
+};
+
+/* ============ QUIZ LOGIC ============ */
+let act=store.get('gr_active'),timer=null,lastRes=null;
+const DUR=60*60*1000;
+function quizIntro(){return `${hd('اختبار قانون نيوتن للجذب العام','Final Quiz')}<div class="card"><p>15 سؤالًا اختيار من متعدد · الزمن 60 دقيقة · يبدأ العد التنازلي بمجرد الضغط على «بدء الاختبار».</p>${lastRes?`<p class="okc">تم إرسال اختبارك. <button class="btn sm" data-go="_res">عرض النتيجة</button></p>`:''}<label for="nm">الاسم الثلاثي (إجباري)</label><input id="nm" autocomplete="name"><label for="em">البريد الإلكتروني (إجباري)</label><input id="em" type="email" dir="ltr" autocomplete="email"><p class="err" id="er"></p><div class="row"><button class="btn gold" id="go">بدء الاختبار</button></div></div>`}
+function startQuiz(){const n=$('#nm').value.trim().replace(/\s+/g,' '),e=$('#em').value.trim().toLowerCase(),er=$('#er');
+ if(n.split(' ').length<3)return er.textContent='أدخل الاسم الثلاثي (ثلاث كلمات).';
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e))return er.textContent='أدخل بريدًا إلكترونيًا صحيحًا.';
+ if(DS.has(e))return er.textContent='تم إرسال اختبار بهذا البريد من قبل، ولا يمكن إرساله مرة أخرى.';
+ act={name:n,email:e,start:Date.now(),ans:{},i:0};store.set('gr_active',act);show('quiz');tick()}
+function quizQ(){const q=BANK[act.i],n=Object.keys(act.ans).length;
+ return `<div class="card"><p class="mu">السؤال ${act.i+1} من ${BANK.length} · تمت الإجابة عن ${n}</p><h3><bdi>${q.q}</bdi></h3><div id="ops">${q.o.map((o,j)=>`<button class="opt${act.ans[act.i]===j?' sel':''}" data-o="${j}"><bdi>${o}</bdi></button>`).join('')}</div>
+<div class="row"><button class="btn" data-qn="-1" ${act.i?'':'disabled'}>السابق</button><button class="btn" data-qn="1" ${act.i<BANK.length-1?'':'disabled'}>التالي</button><button class="btn gold" id="fin">إنهاء وإرسال</button><span id="fm" class="err"></span></div>
+<div class="dots">${BANK.map((_,k)=>`<button class="dot${act.ans[k]!=null?' d':''}${k==act.i?' c':''}" data-qg="${k}" aria-label="سؤال ${k+1}">${k+1}</button>`).join('')}</div></div>`}
+function bindQ(){$('#tm').hidden=false;tick()}
+function tick(){clearInterval(timer);if(!act)return;const t=$('#tm');t.hidden=false;
+ const f=()=>{const rem=act.start+DUR-Date.now();if(rem<=0){t.textContent='00:00';submitQuiz(true);return}const s=Math.ceil(rem/1000);t.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');t.className=s<300?'':'ok';};f();timer=setInterval(f,500)}
+function analyze(ans){const o={};BANK.forEach((q,i)=>{(o[q.t]=o[q.t]||{n:0,c:0}).n++;if(ans[i]===q.a)o[q.t].c++});const s=[],r=[];Object.keys(o).forEach(t=>{(o[t].c/o[t].n>=.75?s:r).push(TOPICS[t])});return{s,r}}
+function submitQuiz(auto){if(!act)return;clearInterval(timer);const end=Date.now(),ans=BANK.map((_,i)=>act.ans[i]??null),ok=ans.filter((a,i)=>a===BANK[i].a).length,an=analyze(ans);
+ lastRes={name:act.name,email:act.email,score:ok,total:BANK.length,pct:Math.round(ok/BANK.length*100),ok,bad:BANK.length-ok,start:act.start,end:Math.min(end,act.start+DUR),ans,strengths:an.s,review:an.r,auto:!!auto};
+ DS.save(lastRes);act=null;store.del('gr_active');$('#tm').hidden=true;$('#main').innerHTML=resView(lastRes)}
+function resView(r,t){const rows=BANK.map((q,i)=>{const a=r.ans[i],good=a===q.a;return `<tr><td>${i+1}</td><td><bdi>${q.q}</bdi></td><td class="${good?'okc':'err'}"><bdi>${a==null?'لم يُجب':q.o[a]}</bdi></td><td><bdi>${q.o[q.a]}</bdi></td><td>${good?'✓':'✗'}</td></tr>`}).join('');
+ return `${hd('نتيجة الاختبار','Quiz Result')}${r.auto?'<p class="err">انتهى الوقت، وتم إرسال إجاباتك تلقائيًا.</p>':''}<div class="card"><div class="stats"><div><b>${r.ok} / ${r.total}</b>الدرجة</div><div><b>${r.pct}%</b>النسبة</div><div><b>${r.ok}</b>صحيحة</div><div><b>${r.bad}</b>خاطئة</div></div><p>الطالب: <b>${r.name}</b> · <span dir="ltr">${r.email}</span><br>التاريخ: ${fmtD(r.start)} · البداية: ${fmtT(r.start)} · النهاية: ${fmtT(r.end)}</p></div>
+<div class="card"><h3>تحليل الأداء</h3><p class="okc"><b>نقاط القوة:</b> ${r.strengths.length?r.strengths.join('، '):'لا توجد بعد'}</p><p class="err"><b>نقاط تحتاج إلى مراجعة:</b> ${r.review.length?r.review.join('، '):'لا توجد — أداء ممتاز'}</p></div>
+<div class="card tw"><table><tr><th>#</th><th>السؤال</th><th>إجابة الطالب</th><th>الإجابة الصحيحة</th><th></th></tr>${rows}</table></div>`}
+
+/* ============ TEACHER DASHBOARD & EXPORT ============ */
+function dash(){const a=DS.all(),n=a.length,avg=n?(a.reduce((s,r)=>s+r.score,0)/n).toFixed(1):0,mx=n?Math.max(...a.map(r=>r.score)):0,mn=n?Math.min(...a.map(r=>r.score)):0,pass=n?Math.round(a.filter(r=>r.pct>=50).length/n*100):0,need=a.filter(r=>r.review.length).length;
+ return `${hd('لوحة المعلم','Teacher Dashboard')}<div class="card err" style="color:var(--gold)">تُحفظ النتائج حاليًا في متصفح هذا الجهاز فقط (طبقة DataService جاهزة للربط بقاعدة بيانات).</div><div class="stats"><div><b>${n}</b>عدد الطلاب</div><div><b>${avg}</b>متوسط الدرجات</div><div><b>${mx}</b>أعلى درجة</div><div><b>${mn}</b>أقل درجة</div><div><b>${pass}%</b>نسبة النجاح (≥50%)</div><div><b>${need}</b>يحتاجون مراجعة</div></div>
+<div class="row"><button class="btn gold" id="xl">تصدير النتائج إلى Excel</button><span id="xm" class="mu"></span></div>
+<div class="card tw">${n?`<table><tr><th>الطالب</th><th>البريد الإلكتروني</th><th>الدرجة</th><th>النسبة</th><th>الصحيح</th><th>الخطأ</th><th>بداية الاختبار</th><th>نهاية الاختبار</th><th>التاريخ</th></tr>${a.map((r,i)=>`<tr><td><button class="btn sm" data-st="${i}">${r.name}</button></td><td dir="ltr">${r.email}</td><td>${r.score}/${r.total}</td><td>${r.pct}%</td><td>${r.ok}</td><td>${r.bad}</td><td>${fmtT(r.start)}</td><td>${fmtT(r.end)}</td><td>${fmtD(r.start)}</td></tr>`).join('')}</table>`:'<p class="mu">لا توجد نتائج بعد. ستظهر هنا نتائج الطلاب بعد إرسال اختباراتهم.</p>'}</div>`}
+async function exportXl(){const m=$('#xm'),a=DS.all();if(!a.length)return m.textContent='لا توجد نتائج للتصدير.';if(!window.XLSX)return m.textContent='تعذر تحميل مكتبة Excel.';
+ const rows=a.map(r=>({'اسم الطالب':r.name,'البريد الإلكتروني':r.email,'الدرجة':r.score+'/'+r.total,'النسبة المئوية':r.pct+'%','عدد الإجابات الصحيحة':r.ok,'عدد الإجابات الخاطئة':r.bad,'وقت بداية الاختبار':fmtT(r.start),'وقت نهاية الاختبار':fmtT(r.end),'التاريخ':fmtD(r.start),'نقاط القوة':r.strengths.join('، '),'نقاط تحتاج إلى مراجعة':r.review.join('، ')}));
+ const ws=XLSX.utils.json_to_sheet(rows);ws['!cols']=Object.keys(rows[0]).map(()=>({wch:24}));const wb=XLSX.utils.book_new();wb.Workbook={Views:[{RTL:true}]};XLSX.utils.book_append_sheet(wb,ws,'النتائج');
+ const buf=XLSX.write(wb,{type:'array',bookType:'xlsx'});
+ try{const d=await claude.use('downloads');if(!d)return m.textContent='الحفظ غير متاح في هذا العرض. افتح الرابط في claude.ai للتصدير.';await d.save({filename:'نتائج-قانون-الجذب-العام.xlsx',data:new Blob([buf])});m.textContent=''}catch(e){m.textContent=e&&e.code=='declined'?'تم إلغاء الحفظ.':'تعذر حفظ الملف.'}}
+
+/* ============ EVENTS ============ */
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;
+ if(t.id=='menu')return $('#nav').classList.toggle('open');
+ if(t.dataset.go){if(t.dataset.go=='_res'){$('#main').innerHTML=resView(lastRes);return}return show(t.dataset.go)}
+ if(t.classList.contains('rv')){const n=t.nextElementSibling;n.hidden=!n.hidden;t.textContent=n.hidden?(t.textContent.includes('الحل')?'إظهار الحل':'إظهار الإجابة'):(t.textContent.includes('الحل')?'إخفاء الحل':'إخفاء الإجابة');return}
+ if(t.id=='nx'){const s=$('.stp[hidden]');if(s){s.hidden=false}if(!$('.stp[hidden]'))t.hidden=true;return}
+ if(t.dataset.k){const p=t.closest('.pr'),k=t.dataset.k;if(k=='h')p.querySelectorAll('.s1,.s2,.s3').forEach(x=>x.hidden=true);else p.querySelector('.'+k).hidden=false;return}
+ if(t.classList.contains('chk')){const c=t.closest('.pq'),q=BANK[+c.dataset.i],s=c.querySelector('input:checked'),f=c.querySelector('.fb');if(!s){f.innerHTML='<p class="err">اختر إجابة أولًا.</p>';return}const g=+s.value==q.a;f.innerHTML=`<p class="${g?'okc':'err'}"><b>${g?'✓ إجابة صحيحة':'✗ إجابة غير صحيحة'}</b></p><div class="a"><b>الإجابة الصحيحة:</b> <bdi>${q.o[q.a]}</bdi><br>${q.e}</div>`;return}
+ if(t.dataset.o!=null&&act){act.ans[act.i]=+t.dataset.o;store.set('gr_active',act);$('#main').innerHTML=quizQ();return}
+ if(t.dataset.qn&&act){act.i+=+t.dataset.qn;store.set('gr_active',act);$('#main').innerHTML=quizQ();return}
+ if(t.dataset.qg&&act){act.i=+t.dataset.qg;store.set('gr_active',act);$('#main').innerHTML=quizQ();return}
+ if(t.id=='go')return startQuiz();
+ if(t.id=='fin'&&act){const left=BANK.length-Object.keys(act.ans).length;if(t.dataset.c){submitQuiz(false);return}t.dataset.c=1;t.textContent='تأكيد الإرسال';$('#fm').textContent=left?`متبقٍ ${left} سؤال بلا إجابة. اضغط مرة أخرى للتأكيد.`:'اضغط مرة أخرى لتأكيد الإرسال.';return}
+ if(t.id=='xl')return exportXl();
+ if(t.dataset.st!=null){const r=DS.all()[+t.dataset.st],m=$('#modal');m.innerHTML=`<div>${resView(r)}<button class="btn gold" id="cl">إغلاق</button></div>`;m.hidden=false;return}
+ if(t.id=='cl')$('#modal').hidden=true});
+
+/* ============ START ============ */
+const start=(location.hash||'').slice(1);
+show(act?'quiz':(V[start]?start:'home'));
+if(act)tick();
+</script>
+</body>
+</html>
